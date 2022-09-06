@@ -10,16 +10,15 @@ public class Prog {
 		int unePropos;
 		
 		Aleatoire r1 = new Aleatoire(3, 0, 10);
-		//System.out.println(r1.proposerNombre(5));
 		System.out.println(r1);
 		
 		do {
 			
-			unePropos = sca.nextLine().toUpperCase().charAt(0);
-			//r1.proposerNombre(unePropos);
+			unePropos = sca.nextInt();
 			System.out.println(r1.proposerNombre(unePropos));
 			
-		}while(r1.getTentative() != 0 || r1.proposerNombre(unePropos) != "Vous avez gagné !!!");
+		}while(r1.getTentative() != 0);
+		sca.close();
 
 	}
 

@@ -26,23 +26,29 @@ public class Aleatoire {
 	}
 
 	public String toString() {
-		return "Valeur num : " + valeurNum + " tentative : " + tentative;
+		return "La valeur se situe entre " + min + " et " + max;
 	}
 	
 	public String proposerNombre(int proposition) {
 		
 		if(proposition == this.valeurNum) {
 			
-			return "Vous avez gagnÃ© !!!";
-			
-		} else if(this.tentative == 0) {
-			
-			return "Fin du jeux. Vous avez perdu.";
+			this.tentative = 0;
+			return "Vous avez gagné !!!";
 			
 		} else {
 			
 			this.tentative--;
-			return "Recommencer.";
+			
+			if(this.tentative == 0) {
+				
+				return "Fin du jeu. Vous avez perdu. C'était " + valeurNum;
+				
+			} else {
+				
+				return "Recommencer. Il vous reste " + tentative + " tentative(s)";
+				
+			}
 			
 		} 
 		
